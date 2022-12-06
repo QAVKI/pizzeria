@@ -1,21 +1,20 @@
 const React = require('react');
 
-function Layout({title, children, username = ""}) {
+function Layout({ children, username = "" }) {
   return (
     <html lang='en'>
       <head>
         <meta charSet='UTF-8' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-         <link
+        <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous"
         ></link>
         <link rel="stylesheet" href="/css/style.css" />
-        <title>{title ? title : 'created by T.M.'}</title>
-         <script
+        <script
           defer
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -30,21 +29,21 @@ function Layout({title, children, username = ""}) {
         <link rel="stylesheet" href="/css/style.css"/>
         <script defer src="/js/application.js"></script> */}
 
-        </head>
-        <body>
-        <div id="particles-js"></div>
-        <div class="wrapper">
-        <div class="top">
-       <nav
-              class="navbar navbar-expand-lg"
+      </head>
+      <body>
+        {/* <div id="particles-js"></div> */}
+        <div className="wrapper">
+          <div className="top">
+            <nav
+              className="navbar navbar-expand-lg"
               style={{
                 padding: " 2% ",
-                backgroundColor: "rgba(255,255,255,0.7)",
+                backgroundColor: "rgba(0,0,0)",
               }}
             >
-              <div class="container-fluid d-flex align-content-center">
+              <div className="container-fluid d-flex align-content-center">
                 <button
-                  class="navbar-toggler"
+                  className="navbar-toggler"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#navbarNavAltMarkup"
@@ -52,49 +51,61 @@ function Layout({title, children, username = ""}) {
                   aria-expanded="false"
                   aria-label="Toggle navigation"
                 >
-                  <span class="navbar-toggler-icon"></span>
+                  <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                   <a
-                          class="nav-link active"
-                          aria-current="page"
-                          href='\'
-                          style={{ cursor: "pointer" }}
-                        >
-                          <b>ГЛАВНАЯ</b>
-                        </a>
+                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div className="navbar-nav">
+                    <a
+                      className="nav-link active"
+                      aria-current="page"
+                      href='#'
+                    >
+                      <img
+                        src='/images/logo.jpg'
+                        style={{ width: '50px', height: '50px', borderRadius: '50%' }}
+                      />
+                    </a>
+                    <a
+                      className="nav-link active"
+                      aria-current="page"
+                      href='\'
+                      style={{ cursor: "pointer" }}
+                    >
+                      <b style={{ color: 'rgb(255, 255, 255)' }} >ГЛАВНАЯ</b>
+                    </a>
                     {username ? (
                       <>
                         <a
-                          class="nav-link active"
+                          className="nav-link active"
                           aria-current="page"
                           href="#"
-                          style={{ cursor: "default" }}
+                          style={{ cursor: "default", color: 'rgb(255, 255, 255)' }}
                         >
                           Привет, <b>{username}!</b>
                         </a>
                         <a
-                          class="nav-link active"
+                          className="nav-link active"
                           aria-current="page"
                           href="/private/admin"
+                          style={{ color: 'rgb(255, 255, 255)' }}
                         >
                           Личный кабинет
                         </a>
-                        <a class="nav-link text-danger" href="/auth/signout">
+                        <a className="nav-link text-danger" href="/auth/signout" style={{ color: 'rgb(255, 255, 255)' }}>
                           <b>Выход</b>
                         </a>
                       </>
                     ) : (
                       <>
                         <a
-                          class="nav-link active"
+                          className="nav-link active"
                           aria-current="page"
                           href="/auth/signin"
+                          style={{ color: 'rgb(255, 255, 255)' }}
                         >
                           Вход
                         </a>
-                        <a class="nav-link" href="/auth/signup">
+                        <a className="nav-link" href="/auth/signup" style={{ color: 'rgb(255, 255, 255)' }}>
                           Регистрация
                         </a>
                       </>
@@ -105,88 +116,22 @@ function Layout({title, children, username = ""}) {
             </nav>
 
 
-        <div className='container'>{children}</div>
-      </div>
-      <footer
-            class="text-center text-white"
+            <div classNameName='container'>{children}</div>
+          </div>
+          <footer
+            className="text-center text-white"
             style={{
               backgroundColor: "rgba(255,255,255,0.7)",
             }}
           >
-            <div class="container">
-              <section>
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark"
-                  href="#"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark"
-                  href="#"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                >
-                  <i class="fab fa-twitter"></i>
-                </a>
-
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark"
-                  href="#"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                >
-                  <i class="fab fa-google"></i>
-                </a>
-
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark"
-                  href="#"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark"
-                  href="#"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                >
-                  <i class="fab fa-linkedin"></i>
-                </a>
-
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark"
-                  href="#"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </section>
-            </div>
-
             <div
-              class="text-center text-dark p-3"
+              className="text-center text-dark p-3"
               style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
             >
-              <b> © 2022 created by BEARS</b>
-              <a
-                class="text-dark"
-                href="https://elbrusboot.camp/"
-                style={{ textDecoration: "none" }}
-              >
-                {" "}
-                Elbrus Bootcamp
-              </a>
+              <b> © 2022 created by QAVKI</b>
             </div>
           </footer>
-      </div>
+        </div>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
         <script
           src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"

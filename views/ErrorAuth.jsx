@@ -7,15 +7,14 @@ function ErrorAuth({ username }) {
     <Layout username={username}>
       <div className="container">
         <div
-          class="card card-body"
+          className="card card-body"
           style={{
             backgroundColor: "rgba(255,255,255,0.7)",
             borderRadius: "20px",
           }}
         >
           <div
-            class="errMainAuth"
-            className="d-block"
+            className="d-block errMainAuth"
             style={{
               fontWeight: "700",
               color: "black",
@@ -26,8 +25,7 @@ function ErrorAuth({ username }) {
             </span>
             <hr />
             <h1
-              className="d-flex justify-content-center"
-              class="errMessageAuth"
+              className="d-flex justify-content-center errMessageAuth"
               style={{
                 fontWeight: "700",
                 color: "black",
