@@ -1,16 +1,8 @@
 const express = require('express');
 
 const route = express.Router();
+const { signOut } = require('../controllers/signinControllers');
 
-route.get('/', async (req, res) => {
-  if (req.session.newUser !== undefined) {
-    req.session.destroy(() => {
-      res.clearCookie('bears');
-      res.redirect('/home');
-    });
-  } else {
-    res.redirect('/home');
-  }
-});
+route.get('/', signOut);
 
 module.exports = route;

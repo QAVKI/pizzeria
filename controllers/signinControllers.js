@@ -30,4 +30,15 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { renderSignIn, loginUser };
+const signOut = async (req, res) => {
+  if (req.session.newUser !== undefined) {
+    req.session.destroy(() => {
+      res.clearCookie('bears');
+      res.redirect('/home');
+    });
+  } else {
+    res.redirect('/home');
+  }
+};
+
+module.exports = { renderSignIn, loginUser, signOut };

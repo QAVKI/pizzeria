@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const React = require('react');
 const Layout = require('./Layout');
 
@@ -47,7 +48,7 @@ function BasketViews({ user, basket }) {
         {user ? (
           <>
             <div className="flex-column flex-wrap align-item-center text-center">
-              <p className="fs-5">
+              <p className="fs-5" style={{ color: 'white' }}>
                 Итого:
                 {' '}
                 {basket.reduce((acc, curr) => acc + curr.count * curr['Product.price'], 0)}

@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable consistent-return */
 const express = require('express');
 
 const app = express();
@@ -40,6 +42,7 @@ const signOutRoutes = require('./routes/signOutRoutes');
 
 const homeRoutes = require('./routes/homeRoutes');
 const basketRoutes = require('./routes/basketRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
 // вызов функции проверки соединения с базоый данных
 // dbCheck();
@@ -74,6 +77,7 @@ app.use('/signout', signOutRoutes);
 
 app.use('/home', homeRoutes);
 app.use('/basket', basketRoutes);
+app.use('/order', orderRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (err) => {

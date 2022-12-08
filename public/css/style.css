@@ -178,6 +178,10 @@ main {
     width: 970px;
   }
 
+  .navbar-nav {
+    max-height: 100px;
+  }
+
   .nav-item {
     background-color: aquamarine;
     border-radius: 50px;
@@ -188,6 +192,7 @@ main {
     width: 130px;
     margin-left: 20px;
   }
+  
   .logoblock {
     width: 40px;
   
@@ -195,6 +200,9 @@ main {
 }
 
 @media (min-width: 1200px) {
+  .navbar-nav {
+    max-height: 100px;
+  }
   .container {
     width: 1170px;
   }

@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 const React = require('react');
 
 function Layout({ title, children, user }) {
