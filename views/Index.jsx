@@ -1,11 +1,11 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function Index({username}) {
+function Index({ title }) {
   return (
-    <Layout username={username}>
+    <Layout>
       <div>
-        <img style={{ width:'400px', height:'400px' }} src='./images/pizza1.png' />
+        <h2>{title}</h2>
       </div>
     </Layout>
   );
