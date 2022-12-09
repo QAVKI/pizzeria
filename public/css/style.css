@@ -6,6 +6,32 @@
   margin-top: 10px;
 }
 
+.maper {
+	width: 1100px;
+	height: 500px;
+	background-color: #333;
+}
+
+[class*="copyrights-pane"] {
+	display: none !important;
+}
+
+.ymaps-2-1-79-controls__control_toolbar {
+  visibility: hidden;
+}
+
+.balloon__address {
+	color: yellow;
+}
+
+.balloon a {
+	color: red;
+}
+
+[class*="balloon__close-button"] {
+	opacity: 1;
+}
+
 .priceButton {
   margin-bottom: 50px;
   margin-left: 150px;
@@ -35,11 +61,8 @@
 }
 
 .btn-info {
-  /* display: -moz-inline-stack; */
   height: 45px;
-  /* margin-left: 15px; */
   width: 250px;
-  /* margin: 10px; */
   justify-content: space-around;
   color: ghostwhite;
   background-color: lightskyblue;
@@ -50,19 +73,18 @@
 }
 
 .btn-light {
-  background-color: lightskyblue;
+  background: linear-gradient(rgb(255, 205, 113), rgb(0, 0, 0));
   margin: 10px 0px;
   width: 150px;
   height: 45px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   border: none;
-  color: ghostwhite;
+  color: rgb(0, 0, 0);
 }
 
 .but {
   margin-top: auto;
-  /* margin-left: 50px; */
   width: 150px;
   height: 55px;
   margin: 10px 0px 0px 35px;
@@ -129,7 +151,6 @@ body {
 }
 
 .card-body {
-  /* display: flex; */
   margin-top: auto;
   text-align: center;
 }
@@ -156,6 +177,11 @@ main {
   font-size: 30px;
 }
 
+#adress {
+  opacity: 0.7;
+  filter:Alpha(Opacity=70)
+}
+
 @font-face {
   font-family: 'Caveat-SemiBold' ;
   src: url('../fonts/Caveat-SemiBold.ttf');
@@ -171,6 +197,12 @@ main {
   .container {
     width: 750px;
   }
+  
+  .maper {
+    width: 690px;
+    height: 500px;
+    background-color: #333;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -181,7 +213,7 @@ main {
   .navbar-nav {
     max-height: 100px;
   }
-
+  
   .nav-item {
     background-color: aquamarine;
     border-radius: 50px;
@@ -195,7 +227,12 @@ main {
   
   .logoblock {
     width: 40px;
-  
+    
+  }
+  .maper {
+    width:900px;
+    height: 500px;
+    background-color: #333;
   }
 }
 
@@ -203,7 +240,23 @@ main {
   .navbar-nav {
     max-height: 100px;
   }
+
   .container {
     width: 1170px;
+  }
+
+  .maper {
+    width: 1100px;
+    height: 500px;
+    background-color: #333;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .maper {
+    width: 400px;
+    height: 500px;
+    background-color: #333;
   }
 }

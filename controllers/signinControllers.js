@@ -17,7 +17,12 @@ const loginUser = async (req, res) => {
       if (passCheck) {
         req.session.newUser = user.login;
         req.session.save(() => {
-          res.redirect('/home');
+          // console.log(user.worker);
+          if (user.worker) {
+            res.redirect('/worker');
+          } else {
+            res.redirect('/home');
+          }
         });
       } else {
         res.redirect('/auth/registration');

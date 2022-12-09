@@ -28,6 +28,18 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
+      confirm: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+      },
+      comment: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      adress: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

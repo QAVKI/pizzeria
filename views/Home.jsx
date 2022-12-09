@@ -4,10 +4,10 @@ const Layout = require('./Layout');
 
 // eslint-disable-next-line no-unused-vars
 function Home({
-  children, user,
+  children, user, userInfo,
 }) {
   return (
-    <Layout user={user}>
+    <Layout user={user} userInfo={userInfo}>
       <div key={Math.random() * 999999} id="shop-container" className="container row row-cols-1 row-cols-md-2 g-4">
         {children.map((el) => (
           <div data-id={el.id} data-count={el.count} className="card ">

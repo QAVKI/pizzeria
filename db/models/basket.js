@@ -18,6 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER,
     product_id: DataTypes.INTEGER,
     count: DataTypes.INTEGER,
+    confirm: DataTypes.BOOLEAN,
+    comment: DataTypes.STRING,
+    adress: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Basket',

@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport(
     secure: false,
     auth: {
       user: 'zhtmn@icloud.com',
-      pass: 'cotn-zjpz-ttyz-fxwg',
+      pass: process.env.SECRET,
     },
   },
 );
@@ -43,7 +43,7 @@ const signOutRoutes = require('./routes/signOutRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const basketRoutes = require('./routes/basketRoutes');
 const orderRoutes = require('./routes/orderRoutes');
-
+const workerRoutes = require('./routes/workerRoutes');
 // вызов функции проверки соединения с базоый данных
 // dbCheck();
 
@@ -78,6 +78,7 @@ app.use('/signout', signOutRoutes);
 app.use('/home', homeRoutes);
 app.use('/basket', basketRoutes);
 app.use('/order', orderRoutes);
+app.use('/worker', workerRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (err) => {
