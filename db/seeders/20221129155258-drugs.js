@@ -1,14 +1,5 @@
 module.exports = {
   async up(queryInterface) {
-    await queryInterface.bulkInsert('Users', [
-      {
-        login: 'AdminPapa',
-        password: 123456,
-        email: 'idi.tudoy@yandex.ru',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-    ]);
     await queryInterface.bulkInsert('Products', [
       {
         logo: '/images/pizza1.png',

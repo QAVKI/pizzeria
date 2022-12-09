@@ -2,7 +2,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const React = require('react');
 
-function Layout({ title, children, user }) {
+function Layout({ title, children, user, userInfo }) {
+  console.log(userInfo)
   return (
     <html lang="en">
       <head>
@@ -20,7 +21,6 @@ function Layout({ title, children, user }) {
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossOrigin="anonymous" />
         <link rel="stylesheet" href="/css/style.css" />
         <script defer src="/js/application.js" />
-
       </head>
       <body>
         <nav className="navbar navbar-expand-lg container">
@@ -68,7 +68,6 @@ function Layout({ title, children, user }) {
                     </li>
                   </>
                 )}
-
               </ul>
             </div>
           </div>

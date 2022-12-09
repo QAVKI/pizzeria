@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const mailer = require('../app');
 
 const { Basket, Product, User } = require('../db/models');
@@ -15,7 +16,7 @@ const renderBasket = async (req, res) => {
 
   if (userdb !== null) {
     basket = await Basket.findAll({
-      where: { user_id: userdb.id },
+      where: { user_id: userdb.id, confirm: false },
       include: [
         {
           model: Product,
@@ -47,18 +48,15 @@ const buyProduct = async (req, res) => {
       plain: true,
     });
     const user = await User.findOne({ where: { login: req.session.newUser } });
-    // eslint-disable-next-line max-len
-    const dublicate = await Basket.findOne({ where: { user_id: user.id, product_id: +req.params.id } });
+    const dublicate = await Basket.findOne({ where: { user_id: user.id, product_id: +req.params.id, confirm: false } });
     if (dublicate === null) {
-      await Basket.create({ user_id: user.id, product_id: +req.params.id, count: 1 });
+      await Basket.create({ user_id: user.id, product_id: +req.params.id, count: 1, confirm: false, comment: '', adress: '' });
     } else {
-      // eslint-disable-next-line max-len
-      const basket = await Basket.findOne({ where: { user_id: user.id, product_id: +req.params.id } });
-
+      const basket = await Basket.findOne({ where: { user_id: user.id, product_id: +req.params.id, confirm: false } });
       await Basket.update({
         count: basket.count + 1,
       }, {
-        where: { user_id: user.id, product_id: +req.params.id },
+        where: { user_id: user.id, product_id: +req.params.id, confirm: false },
         returning: true,
         plain: true,
       });
@@ -68,19 +66,55 @@ const buyProduct = async (req, res) => {
 };
 
 const clearBasket = async (req) => {
+  console.log(req.params.id, '----------------------------------------------')
   if (req.session.newUser !== undefined) {
-    if (req.session.newUser !== undefined) {
-      const user = await User.findOne({ where: { login: req.session.newUser } });
-      await Basket.destroy({ where: { user_id: user.id }, returning: true, plain: true });
-      const message = {
-        from: '<zhtmn@icloud.com>',
-        to: user.email,
-        subject: 'Order',
-        text: 'Поздравляем вас c покупкой, приходите к нам ещё',
-      };
-      mailer(message);
-    }
+    const user = await User.findOne({ where: { login: req.session.newUser } });
+    await Basket.destroy({ where: { user_id: req.params.id, confirm: true }, returning: true, plain: true });
+    const message = {
+      from: '<zhtmn@icloud.com>',
+      to: user.email,
+      subject: 'Order',
+      text: 'Ждём вас на сайте вновь!!!',
+    };
+    mailer(message);
   }
 };
 
-module.exports = { renderBasket, buyProduct, clearBasket };
+const newOrder = async (req, res) => {
+  const user = await User.findOne({ where: { login: req.session.newUser } });
+  console.log(req.body);
+  await Basket.update({
+    confirm: true,
+    comment: req.body.comment,
+    adress: req.body.adress,
+  }, {
+    where: { user_id: user.id },
+    returning: true,
+    plain: true,
+  });
+  const order = await Basket.findAll({
+    where: { user_id: user.id, confirm: true },
+    include: [
+      {
+        model: Product,
+      },
+    ],
+    raw: true,
+  });
+  // console.log(order);
+  const message = {
+    from: '<zhtmn@icloud.com>',
+    to: user.email,
+    subject: 'Спасибо за заказ',
+    text: `Спасибо за заказ, ваша пицца уже мчит!\n${order.map((el) => el = `${el['Product.title']} x ${el.count}\n`).join(',').split(',').join('')}`,
+  };
+  mailer(message);
+  res.redirect('/');
+};
+
+module.exports = {
+  renderBasket,
+  buyProduct,
+  clearBasket,
+  newOrder,
+};

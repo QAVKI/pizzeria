@@ -10,9 +10,13 @@ const renderHome = async (req, res) => { // Отрисовка главной с
   }
   const userInfo = await User.findOne({ where: { login: user } });
   const children = await Product.findAll({ raw: true });
-  render(Home, {
-    title: 'home', children, user, userInfo,
-  }, res);
+  if (userInfo?.worker) {
+    res.redirect('/worker');
+  } else {
+    render(Home, {
+      title: 'home', children, user, userInfo,
+    }, res);
+  }
 };
 
 module.exports = { renderHome };

@@ -22,7 +22,7 @@ function BasketViews({ user, basket }) {
             ) : (
               <>
                 {basket.map((el) => (
-                  <div data-id={el.id} data-count={el.count} className="card ">
+                  <div key={Math.random() * 999999} data-id={el.id} data-count={el.count} className="card ">
                     <img src={`${el['Product.logo']}`} className="card-img-top" alt="" />
                     <p className="card-body">
                       <h5>{el['Product.title']}</h5>
@@ -45,7 +45,7 @@ function BasketViews({ user, basket }) {
             )}
           </div>
         </div>
-        {user ? (
+        {user && basket.length > 0 ? (
           <>
             <div className="flex-column flex-wrap align-item-center text-center">
               <p className="fs-5" style={{ color: 'white' }}>
@@ -53,7 +53,7 @@ function BasketViews({ user, basket }) {
                 {' '}
                 {basket.reduce((acc, curr) => acc + curr.count * curr['Product.price'], 0)}
               </p>
-              <button type="button" className="btn-success">Оформить заказ</button>
+              <a type="button" href="/order" className="btn-success">Оформить заказ</a>
             </div>
             <div />
           </>

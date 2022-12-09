@@ -22,6 +22,10 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      worker: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
