@@ -1,0 +1,262 @@
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.maper {
+	width: 1100px;
+	height: 500px;
+	background-color: #333;
+}
+
+[class*="copyrights-pane"] {
+	display: none !important;
+}
+
+.ymaps-2-1-79-controls__control_toolbar {
+  visibility: hidden;
+}
+
+.balloon__address {
+	color: yellow;
+}
+
+.balloon a {
+	color: red;
+}
+
+[class*="balloon__close-button"] {
+	opacity: 1;
+}
+
+.priceButton {
+  margin-bottom: 50px;
+  margin-left: 150px;
+}
+
+.box-call {
+  max-height: 180px;
+  /* border: 2px solid red; */
+}
+
+.priceButton {
+  position: absolute !important;
+  flex-direction: row;
+  top: 360px;
+  left: -150px;
+}
+
+.btn-success {
+  width: 1000px;
+  height: 40px;
+  color: ghostwhite;
+  background-color: lightskyblue;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: none;
+  margin-top: auto;
+}
+
+.btn-info {
+  height: 45px;
+  width: 250px;
+  justify-content: space-around;
+  color: ghostwhite;
+  background-color: lightskyblue;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: none;
+  margin-top: auto;
+}
+
+.btn-light {
+  background: linear-gradient(rgb(255, 205, 113), rgb(0, 0, 0));
+  margin: 10px 0px;
+  width: 150px;
+  height: 45px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+
+.but {
+  margin-top: auto;
+  width: 150px;
+  height: 55px;
+  margin: 10px 0px 0px 35px;
+  background-color: lightskyblue;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: none;
+  color: ghostwhite;
+  flex-direction: column-reverse;
+}
+
+
+body {
+  background-size: 110%;
+  background-image: url("/images/fon2.jpg");
+  background-size: 50%;
+  
+}
+
+.nav-item {
+  background: linear-gradient(rgb(255, 205, 113), rgb(0, 0, 0));
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 150px;
+}
+
+.logoblock {
+  width: 50px;
+  margin-right: 3%;
+  
+}
+
+.logo {
+  max-width: 80px;
+  border-radius: 50%;
+}
+
+.card-img-top {
+  max-width: 300px;
+  margin-top: 15 px;
+  margin: 10px;
+  margin-right: 10px;
+  
+}
+
+.card {
+  transition: .8s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  max-width: 260px;
+  backface-visibility: 50%;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 20px;
+  border: none;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card-body {
+  margin-top: auto;
+  text-align: center;
+}
+
+main {
+  width: 1000px;
+  height: 1000px;
+}
+
+.btn.btn-info.buy-btn.green {
+  background-color: #7bd0c5;
+}
+
+.price {
+  background-image: linear-gradient(to bottom right, transparent 45%, rgb(0, 0, 0), transparent 51%);
+}
+
+.navbar {
+  background: linear-gradient(rgb(94, 54, 38), rgb(0, 0, 0));
+  border-radius: 50px;
+}
+
+.regtext {
+  font-size: 30px;
+}
+
+#adress {
+  opacity: 0.7;
+  filter:Alpha(Opacity=70)
+}
+
+@font-face {
+  font-family: 'Caveat-SemiBold' ;
+  src: url('../fonts/Caveat-SemiBold.ttf');
+}
+
+* {
+  font-size: 28px;
+  font-family: 'Caveat-SemiBold';
+}
+
+@media (min-width: 768px) {
+  
+  .container {
+    width: 750px;
+  }
+  
+  .maper {
+    width: 690px;
+    height: 500px;
+    background-color: #333;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 970px;
+  }
+
+  .navbar-nav {
+    max-height: 100px;
+  }
+  
+  .nav-item {
+    background-color: aquamarine;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 130px;
+    margin-left: 20px;
+  }
+  
+  .logoblock {
+    width: 40px;
+    
+  }
+  .maper {
+    width:900px;
+    height: 500px;
+    background-color: #333;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-nav {
+    max-height: 100px;
+  }
+
+  .container {
+    width: 1170px;
+  }
+
+  .maper {
+    width: 1100px;
+    height: 500px;
+    background-color: #333;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .maper {
+    width: 400px;
+    height: 500px;
+    background-color: #333;
+  }
+}
