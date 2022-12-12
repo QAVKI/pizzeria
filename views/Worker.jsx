@@ -6,10 +6,10 @@ require('dotenv').config();
 
 // eslint-disable-next-line no-unused-vars
 function Worker({
-  children, user, worker, first, userInfo,
+  children, user, worker, first,
 }) {
   return (
-    <Layout user={user} userInfo={userInfo}>
+    <Layout user={user}>
       <script defer src={`https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=${process.env.MAP_SECRET}`} />
       <script defer src="/js/maper.js" />
       <div data-use={children[0].adress} id="map-test" className="map maper" />
