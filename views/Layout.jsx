@@ -2,8 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const React = require('react');
 
-function Layout({ title, children, user, userInfo }) {
-  console.log(userInfo)
+function Layout({ title, children, user }) {
   return (
     <html lang="en">
       <head>
@@ -42,7 +41,7 @@ function Layout({ title, children, user, userInfo }) {
                 {user ? (
                   <>
                     <li className="nav-item">
-                      <a className="nav-link active" href="#">
+                      <a className="nav-link active" href="/user">
                         Привет
                         {' '}
                         {user}

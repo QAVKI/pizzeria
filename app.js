@@ -44,6 +44,7 @@ const homeRoutes = require('./routes/homeRoutes');
 const basketRoutes = require('./routes/basketRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const workerRoutes = require('./routes/workerRoutes');
+const userRoutes = require('./routes/userRoutes');
 // вызов функции проверки соединения с базоый данных
 // dbCheck();
 
@@ -79,6 +80,8 @@ app.use('/home', homeRoutes);
 app.use('/basket', basketRoutes);
 app.use('/order', orderRoutes);
 app.use('/worker', workerRoutes);
+app.use('/user', userRoutes);
+app.use('/*', homeRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (err) => {
